@@ -47,16 +47,20 @@ int main()
     printf("Enter book age in years: ");
     scanf("%d", &age);
 
-    resalePrice = originalPrice * (1 - 0.15 * age);
+  
 
-    printf("\n========== BOOK INFORMATION =====================================\n");
+    printf("\n===============BOOK INFORMATION =====================================\n");
     printf("Book Code: %4d\n", bookCode);
     printf("Book Title: %s\n", title);
     printf("Original Price: %.2f BDT\n", originalPrice);
     printf("Age: %d years\n", age);
-    printf("Estimated Resale Price: %.2f BDT\n", resalePrice);
 
-    printf("\n===============================================================\n");
+  if(age>6){resalePrice=originalPrice *(5.0/100);
+   printf("Estimated Resale Price: %.2f BDT\n", resalePrice); }
+else{ resalePrice = originalPrice * (1 - 0.15 * age);
+    printf("Estimated Resale Price: %.2f BDT\n", resalePrice);}
+
+    printf("\n======================================================================\n");
 
     return 0;
 }
