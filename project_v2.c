@@ -3,9 +3,9 @@
 
 int main()
 {
-    int bookCode, age;
+    int bookCode, age,conditionGrade;
     char title[100];
-    double originalPrice, resalePrice;
+    double originalPrice, resalePrice,conditionFactor;
 
     printf("===============================================================\n");
     printf("              SECOND-HAND BOOK EXCHANGE\n");
@@ -41,26 +41,57 @@ int main()
     printf("Enter book title: ");
     scanf(" %99[^\n]", title);
 
+    printf("Enter condition grade (1-3): ");
+    scanf("%d", &conditionGrade);
+
     printf("Enter original price (BDT): ");
     scanf("%lf", &originalPrice);
 
     printf("Enter book age in years: ");
     scanf("%d", &age);
 
+    /*Condition Grad================Example factor
+1	    Good-                         0.90
+2	    Fair-	                      0.75
+3	    Poor-                         0.60
+*/
+
+
+if (conditionGrade == 1)
+{
+    conditionFactor = 0.90;
+}
+else if (conditionGrade == 2)
+{
+    conditionFactor = 0.75;
+}
+else if (conditionGrade == 3)
+{
+    conditionFactor = 0.60;
+}
+else{conditionFactor =0.50;}
+
   
 
-    printf("\n===============BOOK INFORMATION =====================================\n");
-    printf("Book Code: %4d\n", bookCode);
-    printf("Book Title: %s\n", title);
-    printf("Original Price: %.2f BDT\n", originalPrice);
-    printf("Age: %d years\n", age);
+    printf("\n=====================BOOK INFORMATION =====================================\n");
+    
+    printf("%-22s :%d\n", "Book Code", bookCode);
+    printf("%-22s :%s\n", "Book Title", title);
+    printf("%-22s :%.2f BDT\n", "Original Price", originalPrice);
+    printf("%-22s :%d years\n", "Age", age);
 
-  if(age>6){resalePrice=originalPrice *(5.0/100);
-   printf("Estimated Resale Price: %.2f BDT\n", resalePrice); }
-else{ resalePrice = originalPrice * (1 - 0.15 * age);
-    printf("Estimated Resale Price: %.2f BDT\n", resalePrice);}
+    if (age > 6)
+    {
+        resalePrice = originalPrice * (5.0 / 100) * conditionFactor;
+    }
+    else
+    {
+        resalePrice = originalPrice * (1 - 0.15 * age) * conditionFactor;
+    }
 
-    printf("\n======================================================================\n");
+    printf("%-22s :%.2f BDT\n", "Estimated Resale Price", resalePrice);
+
+    printf("\n==========================================================================\n");
 
     return 0;
 }
