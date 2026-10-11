@@ -59,17 +59,17 @@ int main()
 
 if (conditionGrade == 1)
 {
-    conditionFactor = 0.90;
+    conditionFactor = 1.00;
 }
 else if (conditionGrade == 2)
 {
-    conditionFactor = 0.75;
+    conditionFactor = 0.90;
 }
 else if (conditionGrade == 3)
 {
-    conditionFactor = 0.60;
+    conditionFactor = 0.80;
 }
-else{conditionFactor =0.50;}
+else{conditionFactor =0.70;}
 
   
 
