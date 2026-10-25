@@ -1,97 +1,61 @@
 
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-    int bookCode, age,conditionGrade;
+    int bookCode, age, conditionGrade, sold;
     char title[100];
-    double originalPrice, resalePrice,conditionFactor;
+    double originalPrice, conditionFactor, resalePrice;
 
-    printf("===============================================================\n");
-    printf("              SECOND-HAND BOOK EXCHANGE\n");
-    printf("===============================================================\n");
+    printf("============================================\n");
+    printf("       SECOND-HAND BOOK EXCHANGE\n");
+    printf("============================================\n");
+    printf("Welcome to Second-hand Book Exchange!\n\n");
 
-    printf("\nWelcome to Second-hand Book Exchange!\n\n");
-
-    printf("---------------------- MENU ----------------------\n");
     printf("1. List a Book\n");
     printf("2. Quote a Resale Price\n");
     printf("3. Record a Sale\n");
     printf("4. Search by Title\n");
     printf("5. Stock Value Report\n");
-    printf("6. Save & Load\n");
+    printf("6. Save & Load\n\n");
 
-    printf("\n-------------------- BOOK RECORDS --------------------\n");
+    printf("Enter Book Code: ");
+    scanf("%d", &bookCode);
 
-    printf("--------------------------------------------------------------------------------\n");
-    printf("| Book Code | Title                 | Price (BDT) | Age | Grade | Sold       |\n");
-    printf("--------------------------------------------------------------------------------\n");
-
-    printf("| 1001      | Introduction to C     | 850.00      | 2   | 1     | No         |\n");
-    printf("| 1002      | Data Structures       | 1200.00     | 1   | 2     | No         |\n");
-    printf("| 1003      | Discrete Mathematics  | 950.00      | 3   | 3     | Yes        |\n");
-
-    printf("--------------------------------------------------------------------------------\n");
-
-    printf("\n========== ENTER BOOK INFORMATION ==========\n");
-
-    printf("Enter book code: ");
-    scanf("%4d", &bookCode);
-
-    printf("Enter book title: ");
+    printf("Enter Book Title: ");
     scanf(" %99[^\n]", title);
 
-    printf("Enter condition grade (1-3): ");
-    scanf("%d", &conditionGrade);
-
-    printf("Enter original price (BDT): ");
+    printf("Enter Original Price (BDT): ");
     scanf("%lf", &originalPrice);
 
-    printf("Enter book age in years: ");
+    printf("Enter Age in Years: ");
     scanf("%d", &age);
 
-    /*Condition Grad================Example factor
-1	    Good-                         0.90
-2	    Fair-	                      0.75
-3	    Poor-                         0.60
-*/
+    printf("Enter Condition Grade (1-3): ");
+    scanf("%d", &conditionGrade);
 
+    printf("Enter Condition Factor: ");
+    scanf("%lf", &conditionFactor);
 
-if (conditionGrade == 1)
-{
-    conditionFactor = 1.00;
-}
-else if (conditionGrade == 2)
-{
-    conditionFactor = 0.90;
-}
-else if (conditionGrade == 3)
-{
-    conditionFactor = 0.80;
-}
-else{conditionFactor =0.70;}
+    printf("Enter Sold Status (0 = No, 1 = Yes): ");
+    scanf("%d", &sold);
 
-  
+    resalePrice = originalPrice
+                  * (1 - 0.15 * age)
+                  * conditionFactor;
 
-    printf("\n=====================BOOK INFORMATION =====================================\n");
-    
-    printf("%-22s :%d\n", "Book Code", bookCode);
-    printf("%-22s :%s\n", "Book Title", title);
-    printf("%-22s :%.2f BDT\n", "Original Price", originalPrice);
-    printf("%-22s :%d years\n", "Age", age);
+    printf("\n============================================\n");
+    printf("             BOOK RECORD\n");
+    printf("============================================\n");
 
-    if (age > 6)
-    {
-        resalePrice = originalPrice * (5.0 / 100) * conditionFactor;
-    }
-    else
-    {
-        resalePrice = originalPrice * (1 - 0.15 * age) * conditionFactor;
-    }
-
-    printf("%-22s :%.2f BDT\n", "Estimated Resale Price", resalePrice);
-
-    printf("\n==========================================================================\n");
+    printf("Book Code       : %d\n", bookCode);
+    printf("Title           : %s\n", title);
+    printf("Original Price  : %.2f BDT\n", originalPrice);
+    printf("Age             : %d years\n", age);
+    printf("Condition Grade : %d\n", conditionGrade);
+    printf("Condition Factor: %.2f\n", conditionFactor);
+    printf("Resale Price    : %.2f BDT\n", resalePrice);
+    printf("Sold            : %s\n", sold == 1 ? "Yes" : "No");
 
     return 0;
 }
