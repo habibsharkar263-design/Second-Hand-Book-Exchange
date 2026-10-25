@@ -1,61 +1,72 @@
-
 #include <stdio.h>
+
+/* Global Variables */
+int bookCode, age;
+double originalPrice, resalePrice;
+
+/* Function Prototypes */
+void displayBanner(void);
+void displayMenu(void);
+void readRecord(void);
+double calculatePrice(double price, int bookAge);
+void displayRecord(void);
 
 int main(void)
 {
-    int bookCode, age, conditionGrade, sold;
-    char title[100];
-    double originalPrice, conditionFactor, resalePrice;
+    displayBanner();
+    displayMenu();
+    readRecord();
+    resalePrice = calculatePrice(originalPrice, age);
+    displayRecord();
+    return 0;
+}
 
-    printf("============================================\n");
-    printf("       SECOND-HAND BOOK EXCHANGE\n");
-    printf("============================================\n");
-    printf("Welcome to Second-hand Book Exchange!\n\n");
+void displayBanner(void)
+{
+    printf("===============================================================\n");
+    printf("              SECOND-HAND BOOK EXCHANGE\n");
+    printf("===============================================================\n");
+    printf("\nWelcome to Second-hand Book Exchange!\n\n");
+}
 
+void displayMenu(void)
+{
+    printf("---------------------- MENU ----------------------\n");
     printf("1. List a Book\n");
     printf("2. Quote a Resale Price\n");
     printf("3. Record a Sale\n");
     printf("4. Search by Title\n");
     printf("5. Stock Value Report\n");
-    printf("6. Save & Load\n\n");
+    printf("6. Save & Load\n");
+}
 
-    printf("Enter Book Code: ");
+void readRecord(void)
+{
+    printf("\n========== ENTER BOOK INFORMATION ==========\n");
+
+    printf("Enter book code: ");
     scanf("%d", &bookCode);
 
-    printf("Enter Book Title: ");
-    scanf(" %99[^\n]", title);
-
-    printf("Enter Original Price (BDT): ");
+    printf("Enter original price (BDT): ");
     scanf("%lf", &originalPrice);
 
-    printf("Enter Age in Years: ");
+    printf("Enter book age in years: ");
     scanf("%d", &age);
+}
 
-    printf("Enter Condition Grade (1-3): ");
-    scanf("%d", &conditionGrade);
+double calculatePrice(double price, int bookAge)
+{
+    return price * (1 - 0.15 * bookAge);
+}
 
-    printf("Enter Condition Factor: ");
-    scanf("%lf", &conditionFactor);
+void displayRecord(void)
+{
+    printf("\n========== BOOK INFORMATION ==========\n");
 
-    printf("Enter Sold Status (0 = No, 1 = Yes): ");
-    scanf("%d", &sold);
+    printf("Book Code: %d\n", bookCode);
+    printf("Original Price: %.2f BDT\n", originalPrice);
+    printf("Book Age: %d years\n", age);
+    printf("Estimated Resale Price: %.2f BDT\n", resalePrice);
 
-    resalePrice = originalPrice
-                  * (1 - 0.15 * age)
-                  * conditionFactor;
-
-    printf("\n============================================\n");
-    printf("             BOOK RECORD\n");
-    printf("============================================\n");
-
-    printf("Book Code       : %d\n", bookCode);
-    printf("Title           : %s\n", title);
-    printf("Original Price  : %.2f BDT\n", originalPrice);
-    printf("Age             : %d years\n", age);
-    printf("Condition Grade : %d\n", conditionGrade);
-    printf("Condition Factor: %.2f\n", conditionFactor);
-    printf("Resale Price    : %.2f BDT\n", resalePrice);
-    printf("Sold            : %s\n", sold == 1 ? "Yes" : "No");
-
-    return 0;
+    printf("======================================\n");
 }
