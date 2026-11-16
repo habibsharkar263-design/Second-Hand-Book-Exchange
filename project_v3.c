@@ -65,8 +65,7 @@ void displayRecord(void)
 
     printf("Book Code: %d\n", bookCode);
     printf("Original Price: %.2f BDT\n", originalPrice);
-    printf("Book Age: %d years\n", age);
-    printf("Estimated Resale Price: %.2f BDT\n", resalePrice);
+   ç
 
     printf("======================================\n");
 }
