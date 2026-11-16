@@ -65,7 +65,6 @@ void displayRecord(void)
 
     printf("Book Code: %d\n", bookCode);
     printf("Original Price: %.2f BDT\n", originalPrice);
-   ç
 
     printf("======================================\n");
 }
