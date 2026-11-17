@@ -22,3 +22,19 @@ the input validations.
 5. Stock Value Report: The program shows how many books were entered and the running total of their resale prices.
   
 9. Exit: The program says thank you and closes.
+1)
+ (id)------  NAME     
+2632010 | MD HABIB SHARKAR |Student 1
+----—------FEATURES----------------------
+  Main Menu & Program Control
+Part 1
+
+- Global variables এবং function prototypes
+- main() function
+- displayBanner()
+- displayMenu()
+- do-while loop
+- switch-case দিয়ে menu control
+- Exit option
+-----------------END1-----------------------
+
