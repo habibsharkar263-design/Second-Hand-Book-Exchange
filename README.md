@@ -38,3 +38,20 @@ Part 1
 - Exit option
 -----------------END1-----------------------
 
+  
+  3)
+
+(id)------- NAME
+2632016 | MUBTASIM BORHAN BONDHAN | Student 3 
+-----------FEATURES-------------------- 
+Resale Price Calculation 
+Part 3
+
+- "computeResalePrice()" function
+- Resale Price Formula
+- Using Condition Factor
+- Applying floor value if the price becomes negative
+- Testing the formula
+- Main responsibility: Calculating the Resale Price accurately
+-------------------END3----------------------
+
