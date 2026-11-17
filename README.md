@@ -54,3 +54,19 @@ Part 3
 - Main responsibility: Calculating the Resale Price accurately
 -------------------END3----------------------
 
+4)
+
+(id) -------- NAME
+2632316 | Abdul Aziz Al Akib | Student 4 
+-------- FEATURES ----------------
+Book Display & Testing
+Part 4
+
+- "displayBook()" function
+- "showCondition()" function
+- Book Information display
+- Sold/Unsold status display
+- Testing the complete program output
+- Finding incorrect outputs and integration problems
+
+---------------- END4 ----------------
