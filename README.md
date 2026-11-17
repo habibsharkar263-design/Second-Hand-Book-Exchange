@@ -40,7 +40,6 @@ Part 1
 
   
   3)
-
 (id)------- NAME
 2632016 | MUBTASIM BORHAN BONDHAN | Student 3 
 -----------FEATURES-------------------- 
