@@ -72,13 +72,15 @@ Book Display & Testing
 (id) -------- NAME
 2632474 | Kazi Rejuyan Ahammed | student 4
 -------- FEATURES ----------------
-Book Input
--inputBook() function
--Book Code input
--Original Price input
--Age input 
--condition Grade input
--input validation 
--bookEntered and sold update
+Book Input 
+
+
+- inputBook() function
+- Book Code input
+- Original Price input
+- Age input 
+- condition Grade input
+- input validation 
+- bookEntered and sold update
 
 ---------------- END4 ----------------
