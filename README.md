@@ -27,7 +27,6 @@ the input validations.
 2632010 | MD HABIB SHARKAR |Student 1
 ----—------FEATURES----------------------
   Main Menu & Program Control
-Part 1
 
 - Global variables এবং function prototypes
 - main() function
@@ -39,12 +38,12 @@ Part 1
 -----------------END1-----------------------
 
   
-  3)
+  2)
 (id)------- NAME
-2632016 | MUBTASIM BORHAN BONDHAN | Student 3 
+2632016 | MUBTASIM BORHAN BONDHAN | Student 2
 -----------FEATURES-------------------- 
 Resale Price Calculation 
-Part 3
+
 
 - "computeResalePrice()" function
 - Resale Price Formula
@@ -54,13 +53,12 @@ Part 3
 - Main responsibility: Calculating the Resale Price accurately
 -------------------END3----------------------
 
-4)
+3)
 
 (id) -------- NAME
-2632316 | Abdul Aziz Al Akib | Student 4 
+2632316 | Abdul Aziz Al Akib | 
 -------- FEATURES ----------------
 Book Display & Testing
-Part 4
 
 - "displayBook()" function
 - "showCondition()" function
